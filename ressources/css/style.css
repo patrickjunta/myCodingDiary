@@ -121,8 +121,8 @@ nav h3 {
   background-color: white;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 5% (1fr)[5] 5%;
-      grid-template-columns: 5% repeat(5, 1fr) 5%;
+  -ms-grid-columns: 5% (1fr)[7] 5%;
+      grid-template-columns: 5% repeat(7, 1fr) 5%;
 }
 
 .post h1 {
@@ -144,9 +144,17 @@ nav h3 {
 }
 
 .post p {
-  font-size: 20px;
+  font-size: 18px;
   -ms-grid-column: 5;
-  -ms-grid-column-span: 2;
-  grid-column: 5/7;
+  -ms-grid-column-span: 4;
+  grid-column: 5/9;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.post p span {
+  font-size: 20px;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

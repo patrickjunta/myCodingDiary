@@ -1,107 +1,46 @@
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left}
-*, 
-*::before, 
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-@font-face{
-    font-family: RalewayLight;
-    src: url(../fonts/Raleway/Raleway-Light.ttf);
-}
-@font-face{
-    font-family: RalewayRegular;
-    src: url(../fonts/Raleway/Raleway-Regular.ttf);
-}
-$font-size: 20px;
-$colors: (
-    primary: #003F5C,
-    primary-light: lighten(#f7f5a0, 40%),
-    primary-dark: darken(#f7f5a0, 40%),
-    secondary: #5f5e1c,
-    accent: #cf1588
-);
-
-@function color($color-name) {
-    @return map-get($colors, $color-name)
-}
-
-$desktop: 840px;
-
-@mixin desktop {
-    @media (min-width: #{$desktop}) {
-        @content;
-    }    
-}
+$colors: #f5f1f1,#ece7e7,#d4d0d0,#f5f1f1,#ece7e7,#d4d0d0;
 
 
 body, html {
     height: 100%;
-    font-family: RalewayLight;
-    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-    background-repeat: no-repeat;
 }
 
-nav {
-    min-height: 10vh;
-    min-width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 20px 0px 20px;
-    h3 {
-        color: color(primary);
-        font-size: 32px;
-        font-weight: bold;
-    }
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
+
 h1 {
-    font-size: 2rem;
-    grid-column: 1/3;
-    justify-self: center;
-    align-self: flex-start;
-    padding: 0 0 0 10px;
-    background-color: transparent;
-}
-.tag {
-    min-height: 8vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px 10px 7px;
-    font-size: $font-size;
+    margin: 3rem;
 }
 
-.post {
-    border-radius: 3px;
-    min-height: 35vh;
+main {
     display: grid;
-    column-gap: 10px;
-    grid-template-columns: 5% repeat(7,1fr) 5%;
-    margin: 5px 0px;
-    border: solid 1px color(primary);
-    ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        font-size: $font-size;
-        grid-column: 3/5;
-        li span {
-            font-size: $font-size;
-            font-weight: bold;
-        p {
-        font-size: 18px;
-        grid-column: 5/9;
-        align-items: flex-start;
-        span {
-        font-size: $font-size;
-        font-weight: bold;    
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: 1rem;
+    cursor: pointer;
+
+    .card {
+        transition: transform 1s;
+
+        @for $i from 1 through 6 {
+            &:nth-of-type(#{$i}) {
+                background: nth($colors, $i);
+            }
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+
+        img {
+            width: 100%;
+        }
+        
+        .info {
+            padding: 1rem;
+        }
     }
-    }
-    }
-    }
-};
+}

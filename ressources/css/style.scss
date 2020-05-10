@@ -1,47 +1,134 @@
-/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left}
+blockquote,
+body,
+dd,
+dl,
+dt,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+html,
+iframe,
+legend,
+li,
+ol,
+p,
+pre,
+textarea,
+ul {
+  margin: 0;
+  padding: 0;
+}
 
-$colors: #f5f1f1,#ece7e7,#d4d0d0,#f5f1f1,#ece7e7,#d4d0d0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
 
+ul {
+  list-style: none;
+}
 
-body, html {
-    height: 100%;
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+td:not([align]),
+th:not([align]) {
+  text-align: left;
+}
+$colors: #f5f1f1,
+              #ece7e7,
+              #d4d0d0,
+              #f5f1f1,
+              #ece7e7,
+              #d4d0d0,
+              #f5f1f1,
+              #ece7e7,
+              #d4d0d0;
+
+body,
+html {
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 h1 {
-    margin: 3rem;
-    font-size: 28px;
+  margin: 3rem;
+  font-size:32px;
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-    gap: 1rem;
-    cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 1rem;
+  cursor: pointer;
 
-    .card {
-        transition: transform 1s;
-
-        @for $i from 1 through 6 {
-            &:nth-of-type(#{$i}) {
-                background: nth($colors, $i);
-            }
-        }
-
-        &:hover {
-            transform: translateY(-10px);
-        }
-
-        img {
-            width: 100%;
-        }
-        
-        .info {
-            padding: 1rem;
-        }
+  .card {
+    transition: transform 1s;
+    @for $i from 1 through 9 {
+      &:nth-of-type(#{$i}) {
+        background: nth($colors, $i);
+      }
     }
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .info {
+      padding: 1rem;
+    }
+  }
 }

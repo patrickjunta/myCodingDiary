@@ -88,6 +88,10 @@ $colors: #f5f1f1,
               #d4d0d0,
               #f5f1f1,
               #ece7e7,
+              #d4d0d0,
+              #f5f1f1,
+              #d4d0d0,
+              #ece7e7,
               #d4d0d0;
 
 body,
@@ -113,7 +117,7 @@ main {
 
   .card {
     transition: transform 1s;
-    @for $i from 1 through 9 {
+    @for $i from 1 through 12 {
       &:nth-of-type(#{$i}) {
         background: nth($colors, $i);
       }
